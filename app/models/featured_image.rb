@@ -1,0 +1,2 @@
+class FeaturedImage < ApplicationRecord
+end
