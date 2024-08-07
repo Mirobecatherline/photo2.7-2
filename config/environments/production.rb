@@ -6,6 +6,8 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
+  config.hosts << "photo27-2-production.up.railway.app"
+  config.hosts << "photo27-2-production.up.railway.app"
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
@@ -67,7 +69,7 @@ Rails.application.configure do
 
   # Don't log any deprecations.
   config.active_support.report_deprecations = false
-  config.hosts << "https://photo27-2-production.up.railway.app/"
+  
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
