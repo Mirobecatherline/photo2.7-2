@@ -93,3 +93,4 @@ production:
   username: <%= ENV["PGUSER"] %>
   password: <%= ENV["PGPASSWORD"] %>
   port: <%= ENV["PGPORT"] %>
+  data: <%= ENV["PGDATA"] %>
