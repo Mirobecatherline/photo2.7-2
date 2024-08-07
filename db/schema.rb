@@ -41,3 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_094324) do
   end
 
 end
+# // = link_tree ../images
+# // = link_directory ../stylesheets .css
+# // = link_tree ../../javascript .js
+# // = link_tree ../../../vendor/javascript .js
