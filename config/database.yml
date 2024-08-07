@@ -80,8 +80,16 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
+  # <<: *default
+  # database: myapp_production
+  # username: myapp
+  # password: <%= ENV["MYAPP_DATABASE_PASSWORD"] %>
+  # url: <%= ENV['DATABASE_URL'] %>
+
   <<: *default
-  database: myapp_production
-  username: myapp
-  password: <%= ENV["MYAPP_DATABASE_PASSWORD"] %>
-  url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV["DATABASE_URL"] %>
+  host: <%= ENV["PGHOST"] %>
+  database: <%= ENV["PGDATABASE"] %>
+  username: <%= ENV["PGUSER"] %>
+  password: <%= ENV["PGPASSWORD"] %>
+  port: <%= ENV["PGPORT"] %>
