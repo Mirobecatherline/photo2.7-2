@@ -2,11 +2,13 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # gem 'pg', '>= 0.18', '< 2.0'
 # ruby "2.7.4"
-ruby "3.2.0"
-# Bundle. edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+# ruby "3.2.0"
+ruby "3.2.3"
+# Bundle. edge Rails in stead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 gem 'httparty'
-gem 'pg'
+#gem 'pg'
+gem 'pg', '~> 1.5'
 # Use sqlite3 as the database for Active Record
 
 # Use the Puma web server [https://github.com/puma/puma]

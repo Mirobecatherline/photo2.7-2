@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_23_094324) do
+ActiveRecord::Schema[7.0].define(version: 2025_02_13_170739) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "photo_id", null: false
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["photo_id"], name: "index_comments_on_photo_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "featured_images", force: :cascade do |t|
     t.text "image_url"
@@ -22,26 +32,46 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_094324) do
   end
 
   create_table "images", force: :cascade do |t|
-    t.text "image_url"
-    t.integer "user_id"
+    t.bigint "user_id", null: false
+    t.string "url"
+    t.integer "assigned_to"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_images_on_user_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "photo_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["photo_id"], name: "index_likes_on_photo_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "url"
+    t.integer "assigned_to"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_photos_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.text "name"
-    t.text "email"
-    t.text "username"
-    t.text "image_url"
-    t.text "password_digest"
-    t.boolean "approved", default: false
-    t.text "role", default: "user", null: false
+    t.string "uid"
+    t.string "name"
+    t.string "email"
+    t.string "photo_url"
+    t.string "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "comments", "photos"
+  add_foreign_key "comments", "users"
+  add_foreign_key "images", "users"
+  add_foreign_key "likes", "photos"
+  add_foreign_key "likes", "users"
+  add_foreign_key "photos", "users"
 end
-# // = link_tree ../images
-# // = link_directory ../stylesheets .css
-# // = link_tree ../../javascript .js
-# // = link_tree ../../../vendor/javascript .js
