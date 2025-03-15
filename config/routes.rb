@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   resources :images, only: [:index, :create]
   patch "images/:id/assign", to: "images#assign_image"
+  post 'images/user_images', to: 'images#user_images'
+  get 'images/:id/client_images', to: 'images#client_images'
 
   resources :comments, only: [:create]
   resources :likes, only: [:create]

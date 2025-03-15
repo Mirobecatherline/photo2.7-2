@@ -2,8 +2,8 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # gem 'pg', '>= 0.18', '< 2.0'
 # ruby "2.7.4"
-ruby "3.2.0"
-# ruby "3.2.3"
+# ruby "3.2.0"
+ruby "3.2.3"
 # Bundle. edge Rails in stead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 gem 'httparty'
