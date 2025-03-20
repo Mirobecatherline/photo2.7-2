@@ -10,6 +10,7 @@ Rails.application.configure do
 
   config.hosts << "photo27-2-production.up.railway.app"
   config.hosts << "photo27-2-production.up.railway.app"
+  config.hosts << "qjz9sqrm-3000.uks1.devtunnels.ms/"
   
   # Do not eager load code on boot.
   config.eager_load = false

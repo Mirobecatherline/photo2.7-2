@@ -12,6 +12,7 @@ Rails.application.configure do
   config.cache_classes = true
   config.hosts << "photo27-2-production.up.railway.app"
   config.hosts << "photo27-2-production.up.railway.app"
+  config.hosts << "qjz9sqrm-3000.uks1.devtunnels.ms/"
   # Eager loading loads your whole application. When running a single test locally,
   # this probably isn't necessary. It's a good idea to do in a continuous integration
   # system, or in some way before deploying your code.

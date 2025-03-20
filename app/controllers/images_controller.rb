@@ -127,4 +127,15 @@ class ImagesController < ApplicationController
       end
     end
 
+    
+    def mark_as_edited
+      @image = Image.find(params[:id])
+      
+      if @image.update(edited: true)
+        render json: { success: true, image: @image }
+      else
+        render json: { success: false, errors: @image.errors.full_messages }, status: :unprocessable_entity
+      end
+    end
+
 end

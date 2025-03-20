@@ -8,6 +8,7 @@ Rails.application.configure do
 
   config.hosts << "photo27-2-production.up.railway.app"
   config.hosts << "photo27-2-production.up.railway.app"
+  config.hosts << "qjz9sqrm-3000.uks1.devtunnels.ms/"
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
