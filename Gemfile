@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # ruby "2.7.4"
 ruby "3.2.0"
 #ruby "3.2.3"
+#production
 # Bundle. edge Rails in stead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 gem 'httparty'
